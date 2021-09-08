@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBall : MonoBehaviour
 {
     public float jumpPower = 30;
+    public int itemCount;
     bool isJump;
     Rigidbody rigid;
 
@@ -27,8 +28,8 @@ public class PlayerBall : MonoBehaviour
         rigid.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
     }
 
-    void OnCollisionEnter(Collision Collision) {
-        if(Collision.gameObject.name == "Floor") {
+    void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.name == "Floor") {
             isJump = false;
         }
     }
