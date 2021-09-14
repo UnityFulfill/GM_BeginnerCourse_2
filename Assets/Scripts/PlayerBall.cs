@@ -47,10 +47,14 @@ public class PlayerBall : MonoBehaviour
         } else if(collider.tag == "Finish") {
             if(itemCount == manager.totalItemCount) {
                 //Game Clear!
-                SceneManager.LoadScene("Example1_" + (manager.stage + 1).ToString());
+                if(manager.stage == 1) {
+                    SceneManager.LoadScene(0);
+                } else {
+                    SceneManager.LoadScene(manager.stage + 1);
+                }
             } else {
                 //Restart...
-                SceneManager.LoadScene("Example1_" + manager.stage.ToString());
+                SceneManager.LoadScene(manager.stage);
             }
         }
     }
