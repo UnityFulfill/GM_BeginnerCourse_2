@@ -44,6 +44,7 @@ public class PlayerBall : MonoBehaviour
             itemCount++;
             audio.Play();
             collider.gameObject.SetActive(false);
+            manager.GetItem(itemCount);
         } else if(collider.tag == "Finish") {
             if(itemCount == manager.totalItemCount) {
                 //Game Clear!
